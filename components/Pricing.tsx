@@ -40,12 +40,6 @@ const Pricing: React.FC = () => {
                 </li>
               ))}
             </ul>
-            
-            <button className={`w-full mt-10 py-3 font-bold rounded-lg transition-colors ${
-              tier.isFeatured ? 'bg-gray-900 text-white hover:bg-gray-700' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
-            }`}>
-              Select Plan
-            </button>
           </div>
         ))}
       </div>

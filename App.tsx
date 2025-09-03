@@ -6,6 +6,7 @@ import ContentSystem from './components/ContentSystem';
 import KpiDashboard from './components/KpiDashboard';
 import Pricing from './components/Pricing';
 import { sections } from './constants';
+import { MailIcon, PhoneIcon } from './components/Icons';
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>(sections[0].id);
@@ -77,8 +78,18 @@ const App: React.FC = () => {
 
         {renderActiveSection()}
 
-        <footer className="text-center py-8 text-gray-400 text-xs mt-16">
-          <p>CONFIDENTIAL STRATEGIC PROPOSAL FOR OMNI ASTRA (ASTRA LIFESTYLE) | &copy; 2024</p>
+        <footer className="flex flex-col md:flex-row justify-between items-center text-center md:text-left py-8 text-gray-500 text-sm mt-16 border-t border-gray-200">
+          <p>Copyright © 2025 AdItyaadi Inc. All rights reserved.</p>
+          <div className="flex items-center space-x-6 mt-4 md:mt-0">
+            <a href="tel:8100108145" className="flex items-center hover:text-gray-900 transition-colors">
+              <PhoneIcon className="h-4 w-4 mr-2" />
+              <span>8100 108 145</span>
+            </a>
+            <a href="mailto:info@adityaadi.in" className="flex items-center hover:text-gray-900 transition-colors">
+              <MailIcon className="h-4 w-4 mr-2" />
+              <span>info@adityaadi.in</span>
+            </a>
+          </div>
         </footer>
       </main>
     </div>
