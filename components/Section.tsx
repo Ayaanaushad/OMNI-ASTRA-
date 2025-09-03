@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface SectionProps {
@@ -9,10 +8,10 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({ title, subtitle, children }) => {
   return (
-    <section className="py-8">
+    <section className="py-8 animate-fade-in">
       <div className="mb-8">
-        <h2 className="text-3xl font-bold text-white tracking-wide">{title}</h2>
-        <p className="text-amber-300 font-serif mt-1">{subtitle}</p>
+        <h2 className="text-3xl font-bold text-gray-800 tracking-tight">{title}</h2>
+        <p className="text-gray-500 font-serif mt-1">{subtitle}</p>
       </div>
       <div>{children}</div>
     </section>

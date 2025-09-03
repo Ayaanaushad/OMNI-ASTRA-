@@ -1,6 +1,4 @@
-
-import React, { useState, useEffect, useRef } from 'react';
-import Sidebar from './components/Sidebar';
+import React, { useState } from 'react';
 import ExecutiveSummary from './components/ExecutiveSummary';
 import CompetitorAnalysis from './components/CompetitorAnalysis';
 import PostingSchedule from './components/PostingSchedule';
@@ -11,70 +9,57 @@ import { sections } from './constants';
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>(sections[0].id);
-  const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: '-30% 0px -70% 0px', threshold: 0.1 }
-    );
-
-    Object.values(sectionRefs.current).forEach((ref) => {
-      if (ref) {
-        observer.observe(ref);
-      }
-    });
-
-    return () => {
-      Object.values(sectionRefs.current).forEach((ref) => {
-        if (ref) {
-          observer.unobserve(ref);
-        }
-      });
-    };
-  }, []);
+  const renderActiveSection = () => {
+    switch (activeSection) {
+      case 'summary':
+        return <ExecutiveSummary />;
+      case 'competitors':
+        return <CompetitorAnalysis />;
+      case 'schedule':
+        return <PostingSchedule />;
+      case 'content':
+        return <ContentSystem />;
+      case 'kpis':
+        return <KpiDashboard />;
+      case 'pricing':
+        return <Pricing />;
+      default:
+        return <ExecutiveSummary />;
+    }
+  };
 
   return (
-    <div className="flex min-h-screen bg-black font-sans">
-      <Sidebar activeSection={activeSection} />
-      <main className="flex-1 ml-64 p-8 md:p-12 space-y-12 overflow-y-auto">
-        <header className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-amber-300 font-serif">OMNI ASTRA</h1>
-          <p className="text-lg text-gray-400 mt-2">Digital Strategy & Market Dominance Roadmap</p>
+    <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <header className="mb-12 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif">OMNI ASTRA</h1>
+          <p className="text-lg text-gray-500 mt-2">Digital Strategy & Market Dominance Roadmap</p>
         </header>
 
-        {/* FIX: The ref callback should not return a value. Using a block body to prevent implicit return. */}
-        <div id="summary" ref={(el) => { sectionRefs.current['summary'] = el; }}>
-          <ExecutiveSummary />
-        </div>
-        {/* FIX: The ref callback should not return a value. Using a block body to prevent implicit return. */}
-        <div id="competitors" ref={(el) => { sectionRefs.current['competitors'] = el; }}>
-          <CompetitorAnalysis />
-        </div>
-        {/* FIX: The ref callback should not return a value. Using a block body to prevent implicit return. */}
-        <div id="schedule" ref={(el) => { sectionRefs.current['schedule'] = el; }}>
-          <PostingSchedule />
-        </div>
-        {/* FIX: The ref callback should not return a value. Using a block body to prevent implicit return. */}
-        <div id="content" ref={(el) => { sectionRefs.current['content'] = el; }}>
-          <ContentSystem />
-        </div>
-        {/* FIX: The ref callback should not return a value. Using a block body to prevent implicit return. */}
-        <div id="kpis" ref={(el) => { sectionRefs.current['kpis'] = el; }}>
-          <KpiDashboard />
-        </div>
-        {/* FIX: The ref callback should not return a value. Using a block body to prevent implicit return. */}
-        <div id="pricing" ref={(el) => { sectionRefs.current['pricing'] = el; }}>
-          <Pricing />
-        </div>
+        <nav className="sticky top-4 bg-gray-50/80 backdrop-blur-lg z-10 rounded-xl mb-12 border border-gray-200/80 shadow-sm">
+          <ul className="flex justify-center items-center space-x-1 md:space-x-4 overflow-x-auto p-2">
+            {sections.map((section) => (
+              <li key={section.id}>
+                <button
+                  onClick={() => setActiveSection(section.id)}
+                  className={`flex items-center py-2 px-3 md:px-4 rounded-lg text-sm font-medium transition-all duration-200 ease-in-out whitespace-nowrap ${
+                    activeSection === section.id
+                      ? 'bg-white shadow-md text-gray-900'
+                      : 'text-gray-500 hover:bg-white hover:shadow-sm hover:text-gray-900'
+                  }`}
+                >
+                  <section.icon className="h-4 w-4 mr-2 flex-shrink-0" />
+                  <span>{section.name}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-        <footer className="text-center py-8 text-gray-500">
+        {renderActiveSection()}
+
+        <footer className="text-center py-8 text-gray-400 text-xs mt-16">
           <p>CONFIDENTIAL STRATEGIC PROPOSAL FOR OMNI ASTRA (ASTRA LIFESTYLE) | &copy; 2024</p>
         </footer>
       </main>

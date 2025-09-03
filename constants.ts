@@ -1,6 +1,6 @@
-
 import React from 'react';
 import type { Competitor, KpiData, TimeSeriesData, ContentPillar, ContentGuideline, PricingTier, ScheduleItem } from './types';
+// FIX: Removed MessageSquareIcon and LinkIcon as they are not exported from ./components/Icons.
 import { BriefcaseIcon, DiamondIcon, EyeIcon, FeatherIcon, SparklesIcon, TargetIcon, Volume2Icon } from './components/Icons';
 
 export const sections = [
@@ -89,21 +89,22 @@ export const omniAstraData: Competitor = {
 
 
 export const postingScheduleData: ScheduleItem[] = [
-  { day: 1, posts: [{ type: 'Post', idea: 'Brand Manifesto: "Vision Redefined"' }] },
+  { day: 1, posts: [{ type: 'Post', idea: 'Brand Manifesto: "Vision Redefined"' }, {type: 'Story', idea: 'Sneak peek of the manifesto'}] },
   { day: 2, posts: [{ type: 'Story', idea: 'Q&A with the Founder' }, { type: 'Story', idea: 'Poll: Which frame style is your favorite?' }] },
-  { day: 3, posts: [{ type: 'Reel', idea: 'The making of our "Aura" frame' }] },
-  { day: 4, posts: [{ type: 'Post', idea: 'Style Guide: Pairing eyewear with formal wear' }] },
+  { day: 3, posts: [{ type: 'Reel', idea: 'The making of our "Aura" frame' }, {type: 'Story', idea: 'Behind the scenes of the reel'}] },
+  { day: 4, posts: [{ type: 'Post', idea: 'Style Guide: Pairing eyewear with formal wear' }, {type: 'Story', idea: 'Poll: Formal vs Casual eyewear'}, {type: 'Story', idea: 'This or That: Frame styles'}] },
   { day: 5, posts: [{ type: 'Story', idea: 'Behind the scenes at a photoshoot' }, { type: 'Story', idea: 'User-generated content feature' }] },
-  { day: 6, posts: [{ type: 'Post', idea: 'Influencer Collab: @LuxuryLifestyleIndia' }] },
-  { day: 7, posts: [{ type: 'Story', idea: 'Weekly Roundup & Sneak Peek' }] },
-  { day: 8, posts: [{ type: 'Reel', idea: 'A day in the life with Omni Astra eyewear' }] },
-  { day: 9, posts: [{ type: 'Post', idea: 'Material Spotlight: Italian Acetate' }] },
-  { day: 10, posts: [{ type: 'Story', idea: '"Ask our Stylist" session' }] },
-  { day: 11, posts: [{ type: 'Post', idea: 'Celebrating Indian Artisans in our supply chain' }] },
+  { day: 6, posts: [{ type: 'Post', idea: 'Influencer Collab: @LuxuryLifestyleIndia' }, {type: 'Story', idea: 'Influencer takeover announcement'}] },
+  { day: 7, posts: [{ type: 'Story', idea: 'Weekly Roundup & Sneak Peek' }, {type: 'Story', idea: 'Recap of the week'}] },
+  { day: 8, posts: [{ type: 'Reel', idea: 'A day in the life with Omni Astra eyewear' }, {type: 'Story', idea: 'Go live with a style influencer'}] },
+  { day: 9, posts: [{ type: 'Post', idea: 'Material Spotlight: Italian Acetate' }, {type: 'Story', idea: 'Quick fact about Italian Acetate'}] },
+  { day: 10, posts: [{ type: 'Reel', idea: 'Styling one frame 3 ways'}, { type: 'Story', idea: '"Ask our Stylist" session' }, { type: 'Story', idea: 'Vote on next week\'s topic' }] },
+  { day: 11, posts: [{ type: 'Post', idea: 'Celebrating Indian Artisans in our supply chain' }, {type: 'Story', idea: 'Artisan spotlight'}] },
   { day: 12, posts: [{ type: 'Story', idea: 'Unboxing experience' }, { type: 'Story', idea: 'Countdown to new collection' }] },
-  { day: 13, posts: [{ type: 'Reel', idea: 'Transition: From day to night look' }] },
-  { day: 14, posts: [{ type: 'Post', idea: 'The Omni Astra Lifestyle: Weekend vibes' }] },
+  { day: 13, posts: [{ type: 'Reel', idea: 'Transition: From day to night look' }, {type: 'Story', idea: 'How to style this look'}] },
+  { day: 14, posts: [{ type: 'Post', idea: 'The Omni Astra Lifestyle: Weekend vibes' }, {type: 'Story', idea: 'Your weekend plans?'}] },
 ];
+
 
 export const roadmapData = [
   { phase: 'Phase 1 (Days 1-30)', title: 'Foundation & Brand Clarity', description: 'Audit cleanup, brand voice finalization, content pillar establishment, and high-quality asset production.' },
@@ -111,7 +112,6 @@ export const roadmapData = [
   { phase: 'Phase 3 (Days 61-90)', title: 'Conversion & Growth Hacking', description: 'Implement paid ad funnels, optimize website for conversions, and launch a PR outreach campaign.' },
 ];
 
-// FIX: Replaced direct function calls with React.createElement to avoid type inference issues with React.FC possibly returning a Promise.
 export const contentPillars: ContentPillar[] = [
   { title: 'The Art of Craft', description: 'Highlighting the meticulous design, premium materials, and skilled artisanship behind every piece.', icon: React.createElement(FeatherIcon, {}) },
   { title: 'Visionary Lifestyle', description: 'Showcasing the aspirational world of the Omni Astra customer—luxury travel, culture, and success.', icon: React.createElement(EyeIcon, {}) },
@@ -138,20 +138,39 @@ export const visualGuidelines: ContentGuideline = {
   ]
 };
 
+export const captionTemplates: ContentGuideline = {
+  title: "Caption Templates",
+  points: [
+      "**Hook:** Start with a question or a bold statement to grab attention. (e.g., 'The only accessory you'll need this season.')",
+      "**Body:** Tell a micro-story about the product, its inspiration, or the lifestyle it represents. Connect with the audience on an emotional level.",
+      "**Details:** Include essential product information subtly. Mention materials or unique features.",
+      "**CTA:** End with a clear, low-friction call-to-action.",
+  ]
+};
+
+export const ctaGuidelines: ContentGuideline = {
+  title: "Call-to-Action Examples",
+  points: [
+      "**For Engagement:** 'Which style defines you? Comment below.', 'Tell us where you'd wear these.', 'Tag someone who appreciates fine craftsmanship.'",
+      "**For Conversion:** 'Tap the link in bio to explore the collection.', 'Discover the story behind the design.', 'Shop the look.'",
+      "**For Community:** 'Share your #OmniAstra moment for a chance to be featured.', 'Join our mailing list for exclusive previews.'",
+  ]
+};
+
 export const awarenessKpis: KpiData[] = [
-  { name: 'Instagram Reach', value: 150000, previousValue: 25000 },
-  { name: 'Website Sessions', value: 25000, previousValue: 4000 },
-  { name: 'Brand Mentions', value: 500, previousValue: 80 },
+  { name: 'Instagram Reach', value: 15000, previousValue: 10000 },
+  { name: 'Impressions', value: 25000, previousValue: 15000 },
+  { name: 'Follower Growth', value: 7, previousValue: 2 },
 ];
 export const engagementKpis: KpiData[] = [
-  { name: 'Engagement Rate', value: 3.5, previousValue: 2.1 },
-  { name: 'Post Saves', value: 2500, previousValue: 300 },
-  { name: 'Story Replies', value: 800, previousValue: 150 },
+  { name: 'Engagement Rate', value: 2.8, previousValue: 2.1 },
+  { name: 'Avg. Reshares / Post', value: 5, previousValue: 2 },
+  { name: 'Video Completion Rate', value: 50, previousValue: 35 },
 ];
 export const conversionKpis: KpiData[] = [
-  { name: 'Website Clicks from IG', value: 1200, previousValue: 200 },
-  { name: 'Add to Carts', value: 400, previousValue: 50 },
-  { name: 'Conversions', value: 150, previousValue: 15 },
+  { name: 'DM Inquiries', value: 50, previousValue: 20 },
+  { name: 'Leads Generated', value: 25, previousValue: 10 },
+  { name: 'Profile Visit Rate', value: 8, previousValue: 5 },
 ];
 
 export const followersGrowthData: TimeSeriesData[] = [
@@ -171,49 +190,46 @@ export const websiteTrafficData: TimeSeriesData[] = [
     { month: 'Jun', 'Omni Astra': 4100, 'Industry Average': 58000 },
 ];
 
-
 export const pricingTiers: PricingTier[] = [
   {
-    name: 'Digital Lite',
+    name: 'Content Lite',
     level: 'Foundation',
-    price: '₹75,000 / month',
-    description: 'Essential social media management to build a consistent and professional brand presence.',
+    price: '₹25,000 / month',
+    description: 'Core content creation and strategy to build a foundational brand voice.',
     features: [
-      'Social Media Strategy',
-      '2 Platforms (IG, LI)',
-      '12 Posts / month',
-      'Basic Community Management',
-      'Monthly Performance Report',
+      'Digital Strategy',
+      'Professional Design',
+      '1 Photoshoot / month',
+      '15 Pieces of Content',
+      'Basic On-Page SEO',
     ],
     isFeatured: false,
   },
   {
-    name: 'Digital Pro',
-    level: 'Growth',
-    price: '₹1,50,000 / month',
-    description: 'Comprehensive digital strategy for aggressive growth, engagement, and community building.',
+    name: 'Digital Lite',
+    level: 'Suggested Growth',
+    price: '₹35,000 / month',
+    description: 'A balanced approach for steady growth, combining content with essential marketing support.',
     features: [
-      'Everything in Lite, plus:',
-      'Full Content Production (Photo/Video)',
-      'Influencer Marketing (Tier 2/3)',
-      'Paid Ad Management (up to ₹50k spend)',
-      'SEO & Blog Content',
-      'Bi-Weekly Strategy Calls',
+      'Everything in Content Lite, plus:',
+      'Advanced SEO',
+      '20 Pieces of Content',
+      'Emergency Photoshoot',
+      'Ad Support (up to ₹1L/quarter)',
     ],
     isFeatured: true,
   },
   {
-    name: 'Digital Elite',
+    name: 'Digital Pro',
     level: 'Dominance',
-    price: '₹2,75,000 / month',
-    description: 'An all-inclusive partnership for market leadership, integrating all facets of digital marketing.',
+    price: '₹40,000 / month',
+    description: 'Aggressive growth package with high-volume content and 24/7 brand management.',
     features: [
-      'Everything in Pro, plus:',
-      'Omnichannel Strategy (Email, PR)',
-      'Celebrity/Tier 1 Influencer Seeding',
-      'Advanced SEO & CRO',
-      'Full-funnel Ad Management',
-      'Dedicated Account Director',
+      'Everything in Digital Lite, plus:',
+      '5 Photoshoots / month',
+      '35 Pieces of Content',
+      'Unlimited Ad Support',
+      '24/7 Reputation Management',
     ],
     isFeatured: false,
   },
