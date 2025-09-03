@@ -32,9 +32,27 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-        <header className="mb-12 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif">OMNI ASTRA</h1>
-          <p className="text-lg text-gray-500 mt-2">Digital Strategy & Market Dominance Roadmap</p>
+        <header className="mb-12 relative flex justify-center items-center">
+            {/* Logo for medium screens and up */}
+            <div className="hidden md:block absolute left-0">
+                <img 
+                    src="https://static.wixstatic.com/media/481a8e_35300858fcff4e04ace05b8e87c89d09~mv2.png/v1/fill/w_186,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/481a8e_35300858fcff4e04ace05b8e87c89d09~mv2.png" 
+                    alt="Omni Astra Logo" 
+                    className="h-12"
+                />
+            </div>
+
+            {/* Text content */}
+            <div className="text-center">
+                {/* Logo for small screens, stacked on top */}
+                <img 
+                    src="https://static.wixstatic.com/media/481a8e_35300858fcff4e04ace05b8e87c89d09~mv2.png/v1/fill/w_186,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/481a8e_35300858fcff4e04ace05b8e87c89d09~mv2.png" 
+                    alt="Omni Astra Logo" 
+                    className="h-12 mx-auto mb-4 md:hidden"
+                />
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif">OMNI ASTRA</h1>
+                <p className="text-lg text-gray-500 mt-2">Digital Strategy & Market Dominance Roadmap</p>
+            </div>
         </header>
 
         <nav className="sticky top-4 bg-gray-50/80 backdrop-blur-lg z-10 rounded-xl mb-12 border border-gray-200/80 shadow-sm">
