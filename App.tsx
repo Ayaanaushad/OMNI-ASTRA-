@@ -4,7 +4,6 @@ import CompetitorAnalysis from './components/CompetitorAnalysis';
 import PostingSchedule from './components/PostingSchedule';
 import ContentSystem from './components/ContentSystem';
 import KpiDashboard from './components/KpiDashboard';
-import Pricing from './components/Pricing';
 import { sections } from './constants';
 import { MailIcon, PhoneIcon } from './components/Icons';
 
@@ -23,8 +22,6 @@ const App: React.FC = () => {
         return <ContentSystem />;
       case 'kpis':
         return <KpiDashboard />;
-      case 'pricing':
-        return <Pricing />;
       default:
         return <ExecutiveSummary />;
     }

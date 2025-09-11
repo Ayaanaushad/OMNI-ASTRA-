@@ -1,7 +1,7 @@
 import React from 'react';
-import type { Competitor, KpiData, TimeSeriesData, ContentPillar, ContentGuideline, PricingTier, ScheduleItem } from './types';
-// FIX: Removed MessageSquareIcon and LinkIcon as they are not exported from ./components/Icons.
-import { BriefcaseIcon, DiamondIcon, EyeIcon, FeatherIcon, SparklesIcon, TargetIcon, Volume2Icon } from './components/Icons';
+// FIX: Import PricingTier type
+import type { Competitor, KpiData, TimeSeriesData, ContentPillar, ContentGuideline, ScheduleItem, PricingTier } from './types';
+import { BriefcaseIcon, EyeIcon, FeatherIcon, SparklesIcon, TargetIcon, Volume2Icon } from './components/Icons';
 
 export const sections = [
   { id: 'summary', name: 'Executive Summary', icon: EyeIcon },
@@ -9,7 +9,6 @@ export const sections = [
   { id: 'schedule', name: 'Posting Schedule', icon: BriefcaseIcon },
   { id: 'content', name: 'Content System', icon: FeatherIcon },
   { id: 'kpis', name: 'Measurement & KPIs', icon: SparklesIcon },
-  { id: 'pricing', name: 'Pricing Packages', icon: DiamondIcon },
 ];
 
 export const executiveSummaryPoints = [
@@ -190,48 +189,50 @@ export const websiteTrafficData: TimeSeriesData[] = [
     { month: 'Jun', 'Omni Astra': 4100, 'Industry Average': 58000 },
 ];
 
+// FIX: Add pricingTiers data to be consumed by the Pricing.tsx component.
 export const pricingTiers: PricingTier[] = [
   {
-    name: 'Content Lite',
-    level: 'Foundation',
-    price: '₹25,000 / month',
-    description: 'Core content creation and strategy to build a solid online foundation.',
+    name: 'Foundation',
+    level: 'Phase 1',
+    price: '₹75,000 / month',
+    description: 'Establish your brand\'s core digital presence and build a solid foundation for growth.',
     features: [
-      'Content Strategy, Graphic Design, Video Editing',
-      '1 Shoot Day/Month (studio charges separate)',
-      'Maximum of 15 contents pushed out per month',
-      'On-page SEO content generation',
+      'Full Social Media Account Audit & Optimization',
+      'Brand Voice & Tone Finalization',
+      'Content Pillar Strategy (3 Pillars)',
+      '15 Posts/Month (Static, Carousel, Stories)',
+      'Basic Community Management',
+      'Monthly Performance Report',
     ],
     isFeatured: false,
   },
   {
-    name: 'Digital Lite',
-    level: 'Suggested Growth',
-    price: '₹35,000 / month',
-    description: 'A balanced package for growth, combining content with marketing, SEO, and ad support.',
+    name: 'Growth Engine',
+    level: 'Phase 2',
+    price: '₹1,50,000 / month',
+    description: 'Amplify your reach, engage your community, and start driving meaningful conversions.',
     features: [
-      '1 Shoot Day/Month',
-      'Maximum of 20 contents pushed out per month',
-      'Website optimisation & off-page SEO',
-      '1x additional emergency shoot',
-      'Online engagement support',
-      'Ad support up to ₹1L/quarter',
-      'Accommodates shoots outside Kolkata (travel extra)',
+      'All features from Foundation',
+      '25 Posts/Month (Includes Reels & Video)',
+      'Advanced Community Engagement & Building',
+      'Influencer Seeding Program (up to 5)',
+      'Basic Paid Ad Management (up to ₹50k spend)',
+      'Bi-weekly Analytics & Strategy Calls',
     ],
     isFeatured: true,
   },
   {
-    name: 'Digital Pro',
-    level: 'Intensive Ads & Dominance',
-    price: '₹40,000 / month',
-    description: 'Aggressive growth with higher content volume, unlimited ads, and full-service reputation management.',
+    name: 'Market Leader',
+    level: 'Phase 3',
+    price: 'Custom',
+    description: 'Dominate the market with an aggressive, multi-channel growth and conversion strategy.',
     features: [
-      '2x Shoot Days/Month',
-      'Maximum of 35 contents pushed out per month',
-      '1x additional emergency shoot',
-      'Unlimited ad creation and support',
-      '24/7 risk management & reputation building',
-      'Accommodates shoots outside Kolkata (travel extra)',
+      'All features from Growth Engine',
+      'Comprehensive Content Production (Photo & Video Shoots)',
+      'Full Funnel Paid Advertising Strategy & Management',
+      'Website Conversion Rate Optimization (CRO)',
+      'Advanced SEO & Content Marketing',
+      'Dedicated Account Manager & Weekly Strategy Sessions',
     ],
     isFeatured: false,
   },

@@ -35,6 +35,12 @@ export interface ContentGuideline {
   points: string[];
 }
 
+export interface ScheduleItem {
+    day: number;
+    posts: { type: 'Post' | 'Story' | 'Reel'; idea: string; }[];
+}
+
+// FIX: Add PricingTier interface for use in the Pricing.tsx component.
 export interface PricingTier {
   name: string;
   level: string;
@@ -42,9 +48,4 @@ export interface PricingTier {
   description: string;
   features: string[];
   isFeatured: boolean;
-}
-
-export interface ScheduleItem {
-    day: number;
-    posts: { type: 'Post' | 'Story' | 'Reel'; idea: string; }[];
 }
