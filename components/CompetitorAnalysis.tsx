@@ -25,7 +25,7 @@ const CompetitorCard: React.FC<{ competitor: Competitor }> = ({ competitor }) =>
             
             <div className="grid grid-cols-3 gap-4 text-center mb-6">
                 <div>
-                    <p className="text-xs text-gray-500 uppercase">SEO Authority</p>
+                    <p className="text-xs text-gray-500 uppercase">{competitor.name === omniAstraData.name ? 'SEO Authority score' : 'SEO Authority'}</p>
                     <p className="text-3xl font-bold text-gray-900">{competitor.metrics.seoAuthority}</p>
                 </div>
                 <div>

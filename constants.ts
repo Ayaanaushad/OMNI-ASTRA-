@@ -15,7 +15,7 @@ export const sections = [
 export const executiveSummaryPoints = [
   {
     title: "Digital Presence Gap",
-    content: "Omni Astra's digital footprint is nascent, lacking the authority and reach of global leaders. SEO is critically under-optimized, and social media engagement is sporadic.",
+    content: "A significant gap exists between Omni Astra's current digital footprint and that of established luxury leaders. The brand's online presence is in its infancy, with critical underperformance in SEO and sporadic social media engagement hindering potential growth.",
     icon: TargetIcon
   },
   {
@@ -38,7 +38,7 @@ export const executiveSummaryPoints = [
 export const competitors: Competitor[] = [
   {
     name: 'Safilo Group',
-    logo: 'https://www.safilogroup.com/themes/custom/safilo/logo.svg',
+    logo: '',
     positioning: 'Global leader with a vast portfolio of licensed and proprietary brands. Focus on heritage, craftsmanship, and widespread distribution.',
     metrics: {
       seoAuthority: 85,
@@ -50,7 +50,7 @@ export const competitors: Competitor[] = [
   },
   {
     name: 'Kering Eyewear',
-    logo: 'https://www.keringeyewear.com/images/kering_eyewear_logo_white.svg',
+    logo: '',
     positioning: 'Luxury-focused disruptor, leveraging high-fashion brand equity. Strong emphasis on design innovation and brand storytelling.',
     metrics: {
       seoAuthority: 78,
@@ -62,7 +62,7 @@ export const competitors: Competitor[] = [
   },
   {
     name: 'Luxottica',
-    logo: 'https://www.luxottica.com/sites/luxottica.com/files/styles/logo_header_lg/public/2022-09/essilorluxottica-logo_0.png?itok=2P-8A8Sj',
+    logo: '',
     positioning: 'Vertically integrated behemoth controlling manufacturing, brands, and retail. Focus on market saturation and brand ubiquity.',
     metrics: {
       seoAuthority: 92,
@@ -83,7 +83,7 @@ export const omniAstraData: Competitor = {
       instagramFollowers: '5k',
       engagementRate: '2.1%',
     },
-    strengths: ['Niche appeal', 'High engagement with small community', 'Agile and adaptable'],
+    strengths: ['Niche appeal', 'Agile and adaptable'],
     weaknesses: ['Low brand awareness', 'Weak SEO and content strategy', 'Limited distribution network'],
 };
 
@@ -109,7 +109,7 @@ export const postingScheduleData: ScheduleItem[] = [
 export const roadmapData = [
   { phase: 'Phase 1 (Days 1-30)', title: 'Foundation & Brand Clarity', description: 'Audit cleanup, brand voice finalization, content pillar establishment, and high-quality asset production.' },
   { phase: 'Phase 2 (Days 31-60)', title: 'Community Building & Engagement', description: 'Launch influencer program, run engagement campaigns, and build a consistent content cadence.' },
-  { phase: 'Phase 3 (Days 61-90)', title: 'Conversion & Growth Hacking', description: 'Implement paid ad funnels, optimize website for conversions, and launch a PR outreach campaign.' },
+  { phase: 'Phase 3 (Days 61-90)', title: 'Conversion & Growth Hacking', description: 'Implement paid ad funnels, optimize website for conversions.' },
 ];
 
 export const contentPillars: ContentPillar[] = [
