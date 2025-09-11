@@ -121,39 +121,39 @@ export const contentPillars: ContentPillar[] = [
 export const voiceGuidelines: ContentGuideline = {
   title: "Brand Voice & Tone",
   points: [
-    "**Sophisticated & Assured:** Use elegant language. Avoid slang and hyperbole.",
-    "**Evocative & Sensory:** Describe feelings, textures, and light. Appeal to the senses.",
-    "**Exclusive & Insider:** Create a sense of a privileged community. Use 'we invite you', 'discover'.",
-    "**Intelligent & Cultured:** Reference art, design, and culture. Assume a knowledgeable audience."
+    "Sophisticated & Assured: Use elegant language. Avoid slang and hyperbole.",
+    "Evocative & Sensory: Describe feelings, textures, and light. Appeal to the senses.",
+    "Exclusive & Insider: Create a sense of a privileged community. Use 'we invite you', 'discover'.",
+    "Intelligent & Cultured: Reference art, design, and culture. Assume a knowledgeable audience."
   ]
 };
 
 export const visualGuidelines: ContentGuideline = {
   title: "Visual Identity",
   points: [
-    "**Color Palette:** Primary: Deep Charcoal, Off-White. Accent: Champagne Gold. Secondary: Muted neutrals.",
-    "**Typography:** Headers: A modern, elegant Serif (e.g., Playfair Display). Body: A clean, legible Sans-Serif (e.g., Inter).",
-    "**Photography:** High-contrast, moody lighting. Focus on texture and detail. Lifestyle shots should feel authentic and unposed.",
-    "**Composition:** Minimalist and clean. Ample negative space. Focus on a single, heroic subject.",
+    "Color Palette: Primary: Deep Charcoal, Off-White. Accent: Champagne Gold. Secondary: Muted neutrals.",
+    "Typography: Headers: A modern, elegant Serif (e.g., Playfair Display). Body: A clean, legible Sans-Serif (e.g., Inter).",
+    "Photography: High-contrast, moody lighting. Focus on texture and detail. Lifestyle shots should feel authentic and unposed.",
+    "Composition: Minimalist and clean. Ample negative space. Focus on a single, heroic subject.",
   ]
 };
 
 export const captionTemplates: ContentGuideline = {
   title: "Caption Templates",
   points: [
-      "**Hook:** Start with a question or a bold statement to grab attention. (e.g., 'The only accessory you'll need this season.')",
-      "**Body:** Tell a micro-story about the product, its inspiration, or the lifestyle it represents. Connect with the audience on an emotional level.",
-      "**Details:** Include essential product information subtly. Mention materials or unique features.",
-      "**CTA:** End with a clear, low-friction call-to-action.",
+      "Hook: Start with a question or a bold statement to grab attention. (e.g., 'The only accessory you'll need this season.')",
+      "Body: Tell a micro-story about the product, its inspiration, or the lifestyle it represents. Connect with the audience on an emotional level.",
+      "Details: Include essential product information subtly. Mention materials or unique features.",
+      "CTA: End with a clear, low-friction call-to-action.",
   ]
 };
 
 export const ctaGuidelines: ContentGuideline = {
   title: "Call-to-Action Examples",
   points: [
-      "**For Engagement:** 'Which style defines you? Comment below.', 'Tell us where you'd wear these.', 'Tag someone who appreciates fine craftsmanship.'",
-      "**For Conversion:** 'Tap the link in bio to explore the collection.', 'Discover the story behind the design.', 'Shop the look.'",
-      "**For Community:** 'Share your #OmniAstra moment for a chance to be featured.', 'Join our mailing list for exclusive previews.'",
+      "For Engagement: 'Which style defines you? Comment below.', 'Tell us where you'd wear these.', 'Tag someone who appreciates fine craftsmanship.'",
+      "For Conversion: 'Tap the link in bio to explore the collection.', 'Discover the story behind the design.', 'Shop the look.'",
+      "For Community: 'Share your #OmniAstra moment for a chance to be featured.', 'Join our mailing list for exclusive previews.'",
   ]
 };
 

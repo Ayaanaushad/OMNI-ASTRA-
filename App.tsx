@@ -79,7 +79,7 @@ const App: React.FC = () => {
         {renderActiveSection()}
 
         <footer className="flex flex-col md:flex-row justify-between items-center text-center md:text-left py-8 text-gray-500 text-sm mt-16 border-t border-gray-200">
-          <p>Copyright © 2025 AdItyaadi Inc. All rights reserved.</p>
+          <p>Copyright © 2025 AD-Ityaadi Creative Solutions. All Rights Reserved</p>
           <div className="flex items-center space-x-6 mt-4 md:mt-0">
             <a href="tel:8100108145" className="flex items-center hover:text-gray-900 transition-colors">
               <PhoneIcon className="h-4 w-4 mr-2" />
