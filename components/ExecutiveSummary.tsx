@@ -8,6 +8,9 @@ const ExecutiveSummary: React.FC = () => {
       title="Executive Summary"
       subtitle="A 30,000-Foot View of the Digital Landscape"
     >
+      <p className="mb-10 max-w-4xl text-gray-600 leading-relaxed">
+        Omni Astra Pvt. Ltd. stands as a prestigious and trusted brand with strong authority in its space. However, your digital identity does not yet reflect the same level of influence and excellence. This gap limits growth and engagement opportunities. With the right digital transformation, your online presence can truly mirror the strength and stature your brand already commands.
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {executiveSummaryPoints.map((point, index) => (
           <div
